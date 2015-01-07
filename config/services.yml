@@ -5,3 +5,4 @@ services:
       - @config
       - @controller.helper
       - @template
+      - @user
