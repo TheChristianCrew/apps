@@ -1,3 +1,6 @@
 cc_apps_main_controller:
   path: /apps
   defaults: { _controller: cc.apps.controller:display }
+cc_apps_app_controller:
+  path: /apps/{app}
+  defaults: { _controller: cc.apps.controller:display }
