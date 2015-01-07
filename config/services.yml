@@ -1,0 +1,7 @@
+services:
+  cc.apps.controller:
+    class: thechristiancrew\apps\controller\main_controller
+    arguments:
+      - @config
+      - @controller.helper
+      - @template

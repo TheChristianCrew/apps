@@ -1,0 +1,3 @@
+cc_apps_main_controller:
+  path: /apps
+  defaults: { _controller: cc.apps.controller:display }
