@@ -48,29 +48,45 @@ class main_controller {
    */
   public function display($app = '') {
 
-    // Get app configuration
     $apps = $this->apps();
 
-    // Check if an application has been requested
+    $submit = (isset($_POST['submit']) ? true : false);
+
+    $language_file = 'app_default_lang';
+    $template = 'app_default.html';
+
+    /**
+     * Check if an application has been requested and whether or not the
+     * requested app exists in the app array
+     */
     if (!empty($app) && array_key_exists($app, $apps)) {
 
       // Assign template vars
       $template_vars = array(
-        'ACTION_URL' => $this->phpbb_root_path .'app.php/thechristiancrew/apps/'. $app
+        'ACTION_URL' => '',
       );
       $this->template->assign_vars($template_vars);
 
-      // Get the appropriate language file
-      $this->user->add_lang_ext('thechristiancrew/apps', 'app_'. $app .'_lang');
+      // Has the app been submitted?
+      if ($submit) {
 
-      // Render template
-      return $this->helper->render('app_'. $app .'.html', $this->user->lang('PAGE_TITLE'));
+        $language_file = 'app_'. $app .'_submitted_lang';
+        $template = 'app_submitted.html';
 
-    } else {
+      } else {
 
-      return $this->helper->render('app_default.html', 'Applications');
+        $language_file = 'app_'. $app .'_lang';
+        $template = 'app_'. $app .'.html';
+
+      }
 
     }
+
+    // Load language file
+    $this->user->add_lang_ext('thechristiancrew/apps', $language_file);
+
+    // Render template
+    return $this->helper->render($template, $this->user->lang('PAGE_TITLE'));
 
   }
 

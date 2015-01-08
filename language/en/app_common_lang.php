@@ -1,7 +1,7 @@
 <?php
 /**
- * Join application language file
- */
+* Apps common language file
+*/
 
 /**
 * DO NOT CHANGE
@@ -18,9 +18,7 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 
-  'PAGE_TITLE'      => 'Join CC',
-
-  'INGAME_NAME'     => 'In-Game Name',
-  'REAL_NAME'       => 'Real Name'
+  'L_COLON' => ':',
+  'L_SUBMIT' => 'Submit',
 
 ));
