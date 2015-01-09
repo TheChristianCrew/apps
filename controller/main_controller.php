@@ -111,12 +111,12 @@ class main_controller {
    */
   public function processForm($app = '') {
 
-    $apps = apps();
-
+    $apps = $this->apps();
     $template = 'app_submitted.html';
+    include($this->phpbb_root_path .'ext/thechristiancrew/apps/includes/app_'. $app .'_inc.php');
 
-    $title = 'Test Topic';
-    $post = $this->request->variable('ingame_name', '');
+    $title = app_title();
+    $body = app_body();
 
     // Submit post
     $result = $this->submitPost($title, $body, $apps[$app]['forum_id']);
@@ -138,6 +138,52 @@ class main_controller {
    * Submit post
    */
   private function submitPost($title, $body, $forum_id) {
+
+    include($this->phpbb_root_path .'includes/functions_posting.php');
+
+    // Sanitize the form title
+    $title = utf8_normalize_nfc($title, '', true);
+
+    // Sanitize the form data
+    $body = htmlspecialchars($body);
+
+    // Code from the phpBB message parser
+    $match = array('#(script|about|applet|activex|chrome):#i');
+    $replace = array("\\1&#058;");
+    $body = preg_replace($match, $replace, trim($body));
+
+    // variables to hold the parameters for submit_post
+    $poll = $uid = $bitfield = $options = '';
+
+    generate_text_for_storage($title, $uid, $bitfield, $options, false, false, false);
+    generate_text_for_storage($body, $uid, $bitfield, $options, true, true, true);
+
+    // Set the thread's paramaters
+    $params = array(
+      'forum_id'            => $forum_id,
+      'icon_id'             => false,
+      'topic_approved'      => true,
+      'enable_bbcode'       => true,
+      'enable_smilies'      => true,
+      'enable_urls'         => true,
+      'enable_sig'          => true,
+      'message'             => $body,
+      'message_md5'         => md5($body),
+      'bbcode_bitfield'     => $bitfield,
+      'bbcode_uid'          => $uid,
+      'post_edit_locked'    => 0,
+      'topic_title'         => $title,
+      'notify_set'          => false,
+      'notify'              => false,
+      'post_time'           => 0,
+      'forum_name'          => '',
+      'enable_indexing'     => true,
+    );
+
+    // Submit the post to phpBB
+    $result = submit_post('post', $title, '', POST_NORMAL, $poll, $params);
+
+    return $result;
 
   }
 
