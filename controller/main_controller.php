@@ -19,6 +19,9 @@ class main_controller {
   /* @var \phpbb\user */
   protected $user;
 
+  /** @var \phpbb\request\request */
+  protected $request;
+
   /** @var string phpBB root path */
   protected $phpbb_root_path;
 
@@ -29,14 +32,16 @@ class main_controller {
    * @param \phpbb\controller\helper	        $helper           Helper object
    * @param \phpbb\template\template          $template         Template object
    * @param \phpbb\user				                $user             User object
+   * @param \phpbb\request\request            $request          Request object
    * @param string                            $phpbb_root_path  phpbb_root_path
    * @access public
    */
-  public function __construct(\phpbb\config\config $config, \phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\user $user, $phpbb_root_path) {
+  public function __construct(\phpbb\config\config $config, \phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\user $user, \phpbb\request\request $request, $phpbb_root_path) {
     $this->config = $config;
     $this->helper = $helper;
     $this->template = $template;
     $this->user = $user;
+    $this->request = $request;
     $this->phpbb_root_path = $phpbb_root_path;
   }
 
@@ -50,7 +55,7 @@ class main_controller {
 
     $apps = $this->apps();
 
-    $submit = (isset($_POST['submit']) ? true : false);
+    $submit = ($this->request->is_set_post('submit') ? true : false);
 
     $language_file = 'app_default_lang';
     $template = 'app_default.html';

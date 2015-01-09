@@ -6,4 +6,5 @@ services:
       - @controller.helper
       - @template
       - @user
+      - @request
       - %core.root_path%
