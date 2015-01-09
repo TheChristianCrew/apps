@@ -4,6 +4,7 @@ cc_apps_main_controller:
 cc_apps_app_controller:
   path: /apps/{app}
   defaults: { _controller: cc.apps.controller:display }
+  methods: [GET]
 cc_apps_process_app_controller:
   path: /apps/{app}
   defaults: { _controller: cc.apps.controller:processForm }
