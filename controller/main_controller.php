@@ -111,11 +111,24 @@ class main_controller {
    */
   public function processForm($app = '') {
 
+    $template = 'app_submitted.html';
+
+    $title = 'Test Topic';
+    $post = $this->request->variable('ingame_name', '');
+
+    // Submit post
+    $result = $this->submitPost();
+
+    // Load failed submitted template if submission wasn't successful
+    if (!$result) {
+      $template = 'app_submitted_failed.html';
+    }
+
     // Load language file
     $this->user->add_lang_ext('thechristiancrew/apps', 'app_'. $app .'_submitted_lang');
 
     // Render template
-    return $this->helper->render('app_submitted.html', $this->user->lang('PAGE_TITLE'));
+    return $this->helper->render($template, $this->user->lang('PAGE_TITLE'));
 
   }
 
