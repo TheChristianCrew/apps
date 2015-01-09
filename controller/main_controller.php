@@ -68,7 +68,7 @@ class main_controller {
 
       // Assign template vars
       $this->template->assign_vars(array(
-        'L_FORM_ACTION' => '',
+        'L_FORM_ACTION' => $this->phpbb_root_path .'apps/'. $app,
       ));
 
       // Has the app been submitted?
@@ -114,6 +114,13 @@ class main_controller {
 
     return $apps;
 
+  }
+
+  /**
+   * Process form
+   */
+  public function processForm() {
+    
   }
 
 }
