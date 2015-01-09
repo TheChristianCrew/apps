@@ -111,13 +111,15 @@ class main_controller {
    */
   public function processForm($app = '') {
 
+    $apps = apps();
+
     $template = 'app_submitted.html';
 
     $title = 'Test Topic';
     $post = $this->request->variable('ingame_name', '');
 
     // Submit post
-    $result = $this->submitPost();
+    $result = $this->submitPost($title, $body, $apps[$app]['forum_id']);
 
     // Load failed submitted template if submission wasn't successful
     if (!$result) {
@@ -129,6 +131,13 @@ class main_controller {
 
     // Render template
     return $this->helper->render($template, $this->user->lang('PAGE_TITLE'));
+
+  }
+
+  /**
+   * Submit post
+   */
+  private function submitPost($title, $body, $forum_id) {
 
   }
 
