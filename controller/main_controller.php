@@ -67,10 +67,9 @@ class main_controller {
     if (!empty($app) && array_key_exists($app, $apps)) {
 
       // Assign template vars
-      $template_vars = array(
-        'ACTION_URL' => '',
-      );
-      $this->template->assign_vars($template_vars);
+      $this->template->assign_vars(array(
+        'L_FORM_ACTION' => '',
+      ));
 
       // Has the app been submitted?
       if ($submit) {
