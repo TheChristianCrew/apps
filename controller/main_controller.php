@@ -53,9 +53,9 @@ class main_controller {
    */
   public function display($app = '') {
 
-    $apps = $this->apps();
+    global $phpbb_root_path;
 
-    $submit = ($this->request->is_set_post('submit') ? true : false);
+    $apps = $this->apps();
 
     $language_file = 'app_default_lang';
     $template = 'app_default.html';
@@ -68,21 +68,11 @@ class main_controller {
 
       // Assign template vars
       $this->template->assign_vars(array(
-        'L_FORM_ACTION' => $this->phpbb_root_path .'apps/'. $app,
+        'L_FORM_ACTION' => './'. $app,
       ));
 
-      // Has the app been submitted?
-      if ($submit) {
-
-        $language_file = 'app_'. $app .'_submitted_lang';
-        $template = 'app_submitted.html';
-
-      } else {
-
-        $language_file = 'app_'. $app .'_lang';
-        $template = 'app_'. $app .'.html';
-
-      }
+      $language_file = 'app_'. $app .'_lang';
+      $template = 'app_'. $app .'.html';
 
     }
 
@@ -119,8 +109,14 @@ class main_controller {
   /**
    * Process form
    */
-  public function processForm() {
-    
+  public function processForm($app = '') {
+
+    // Load language file
+    $this->user->add_lang_ext('thechristiancrew/apps', 'app_'. $app .'_submitted_lang');
+
+    // Render template
+    return $this->helper->render('app_submitted.html', $this->user->lang('PAGE_TITLE'));
+
   }
 
 }
