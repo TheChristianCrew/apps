@@ -55,24 +55,22 @@ class main_controller {
 
     global $phpbb_root_path;
 
-    $apps = $this->apps();
-
-    $language_file = 'app_default_lang';
-    $template = 'app_default.html';
+    $language_file = 'default_lang';
+    $template = 'default.html';
 
     /**
-     * Check if an application has been requested and whether or not the
-     * requested app exists in the app array
+     * Check if an application has been requested
      */
-    if (!empty($app) && array_key_exists($app, $apps)) {
+    if (!empty($app)) {
 
       // Assign template vars
       $this->template->assign_vars(array(
         'L_FORM_ACTION' => './'. $app,
       ));
 
-      $language_file = 'app_'. $app .'_lang';
-      $template = 'app_'. $app .'.html';
+      // Assign the language and template vars
+      $language_file = $app .'_lang';
+      $template = $app .'_form.html';
 
     }
 
@@ -85,41 +83,26 @@ class main_controller {
   }
 
   /**
-   * Configure apps
-   *
-   * @access private
-   */
-  private function apps() {
-
-    $apps = array(
-      'join' => array(
-        'slug' => 'join',
-        'forum_id' => '2',
-      ),
-      'adminrequest' => array(
-        'slug' => 'adminrequest',
-        'forum_id' => '2',
-      )
-    );
-
-    return $apps;
-
-  }
-
-  /**
    * Process form
    */
   public function processForm($app = '') {
 
-    $apps = $this->apps();
-    $template = 'app_submitted.html';
-    include($this->phpbb_root_path .'ext/thechristiancrew/apps/includes/app_'. $app .'_inc.php');
+    $template = $app .'_form_submitted.html';
 
-    $title = app_title();
-    $body = app_body();
+    // Get required app class file
+    include($this->phpbb_root_path .'ext/thechristiancrew/apps/apps/'. $app .'.php');
+
+    // Instantiate class from included class file
+    $app_class = 'thechristiancrew\apps\apps\\'. $app;
+    $app_obj = new $app_class();
+
+    // Get app data
+    $forum_id = $app_obj->forumID();
+    $title = $app_obj->title();
+    $body = $app_obj->body();
 
     // Submit post
-    $result = $this->submitPost($title, $body, $apps[$app]['forum_id']);
+    $result = $this->submitPost($title, $body, $forum_id);
 
     // Load failed submitted template if submission wasn't successful
     if (!$result) {
@@ -127,7 +110,7 @@ class main_controller {
     }
 
     // Load language file
-    $this->user->add_lang_ext('thechristiancrew/apps', 'app_'. $app .'_submitted_lang');
+    $this->user->add_lang_ext('thechristiancrew/apps', $app .'_submitted_lang');
 
     // Render template
     return $this->helper->render($template, $this->user->lang('PAGE_TITLE'));
