@@ -99,7 +99,7 @@ class main_controller {
     // Get app data
     $forum_id = $app_obj->forumID();
     $title = $app_obj->title();
-    $body = $app_obj->body($app);
+    $body = $app_obj->body();
 
     // Submit post
     $result = $this->submitPost($title, $body, $forum_id);
