@@ -21,6 +21,7 @@ interface apps_interface {
   /**
    * Set the app body
    *
+   * @param string $app The requested application
    * @return string App body
    */
   public function body();

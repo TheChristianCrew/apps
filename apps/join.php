@@ -4,6 +4,12 @@ namespace thechristiancrew\apps\apps;
 
 class join implements apps_interface {
 
+  var $app;
+
+  function __construct($app) {
+    $this->app = $app;
+  }
+
   /**
    * Forum ID
    *
@@ -11,7 +17,7 @@ class join implements apps_interface {
    */
   public function forumID() {
 
-    $forum_id = 2;
+    $forum_id = 4;
 
     return $forum_id;
 
@@ -41,7 +47,11 @@ class join implements apps_interface {
 
     global $request;
 
-    $body = '1, 2, 3...';
+    // Load the language file
+    include($this->phpbb_root_path .'ext/thechristiancrew/apps/language/en/'. $this->app .'_lang.php');
+
+    $body = '[b]'. $lang['INGAME_NAME'] .'[/b]
+    '. $request->variable('ingame_name', '');
 
     return $body;
 
