@@ -18,7 +18,7 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 
-  'PAGE_TITLE'      => 'Join CC',
+  'PAGE_TITLE'      => 'Application to Join The Christian Crew',
 
   'INGAME_NAME'     => 'In-Game Name',
   'REAL_NAME'       => 'Real Name'
