@@ -94,12 +94,14 @@ class main_controller {
 
     // Instantiate class from included class file
     $app_class = 'thechristiancrew\apps\apps\\'. $app;
-    $app_obj = new $app_class($app);
+    $app_obj = new $app_class;
+    $app_obj->setApp($app);
+    $app_obj->setRequest($this->request);
 
     // Get app data
-    $forum_id = $app_obj->forumID();
-    $title = $app_obj->title();
-    $body = $app_obj->body();
+    $forum_id = $app_obj->getForumID();
+    $title = $app_obj->getTopicTitle();
+    $body = $app_obj->getTopicBody();
 
     // Submit post
     $result = $this->submitPost($title, $body, $forum_id);

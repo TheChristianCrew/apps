@@ -5,17 +5,33 @@ namespace thechristiancrew\apps\apps;
 class join implements apps_interface {
 
   var $app;
+  var $request;
 
-  function __construct($app) {
+  /**
+   * Sets the name of the application being requested
+   *
+   * @param string $app The request application
+   */
+  public function setApp($app) {
     $this->app = $app;
   }
 
   /**
-   * Forum ID
+   * Sets the request data class
+   * https://wiki.phpbb.com/PhpBB3.1/RFC/Request_class
+   *
+   * @param \phpbb\request\request $request phpBB's request class
+   */
+  public function setRequest(\phpbb\request\request $request) {
+    $this->request = $request;
+  }
+
+  /**
+   * The Forum ID where the application will get posted to
    *
    * @return int ID of the forum we'll submit the app to
    */
-  public function forumID() {
+  public function getForumID() {
 
     $forum_id = 4;
 
@@ -24,13 +40,11 @@ class join implements apps_interface {
   }
 
   /**
-   * Set the app title
+   * The application's topic title
    *
    * @return string App title
    */
-  public function title() {
-
-    global $request;
+  public function getTopicTitle() {
 
     $title = 'Test';
 
@@ -39,19 +53,18 @@ class join implements apps_interface {
   }
 
   /**
-   * Set the app body
+   * The application topic body
    *
+   * @param string $app The requested application
    * @return string App body
    */
-  public function body() {
-
-    global $request;
+  public function getTopicBody() {
 
     // Load the language file
     include($this->phpbb_root_path .'ext/thechristiancrew/apps/language/en/'. $this->app .'_lang.php');
 
     $body = '[b]'. $lang['INGAME_NAME'] .'[/b]
-    '. $request->variable('ingame_name', '');
+    '. $this->request->variable('ingame_name', '');
 
     return $body;
 
