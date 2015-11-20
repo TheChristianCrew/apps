@@ -12,13 +12,170 @@
         <fieldset>
 
           <dl>
+            <dt><label for="app_type_cc">{L_APP_TYPE}</label></dt>
+            <dd>
+              <label for="app_type_cc"><input type="radio" name="app_type" id="app_type_cc" value="{L_APP_TYPE_CC}" checked /> {L_APP_TYPE_CC}</label>
+              <label for="app_type_acc"><input type="radio" name="app_type" id="app_type_acc" value="{L_APP_TYPE_ACC}" /> {L_APP_TYPE_ACC}</label>
+            </dd>
+          </dl>
+
+        </fieldset>
+
+        <fieldset>
+
+          <h4>{L_PERSONAL_INFORMATION}</h4>
+
+          <dl>
             <dt><label for="ingame_name">{L_INGAME_NAME}{L_COLON}</label></dt>
-            <dd><input class="inputbox" type="text" name="ingame_name" id="ingame_name" /></dd>
+            <dd><input class="inputbox autowidth" type="text" name="ingame_name" id="ingame_name" size="20" /></dd>
           </dl>
 
           <dl>
-            <dt><label for="real_name">{L_REAL_NAME}{L_COLON}</label></dt>
-            <dd><input class="inputbox" type="text" name="real_name" id="real_name" /></dd>
+            <dt>
+              <label for="real_name">{L_REAL_NAME}{L_COLON}</label><br />
+              <span>{L_REAL_NAME_HELP_TEXT}</span>
+            </dt>
+            <dd><input class="inputbox autowidth" type="text" name="real_name" id="real_name" size="20" /></dd>
+          </dl>
+
+          <dl>
+            <dt><label for="age">{L_AGE}{L_COLON}</label></dt>
+            <dd><input class="inputbox autowidth" type="text" name="age" id="age" size="3" /></dd>
+          </dl>
+
+          <dl>
+            <dt>
+              <label for="location">{L_LOCATION}{L_COLON}</label><br />
+              <span>{L_LOCATION_HELP_TEXT}</span>
+            </dt>
+            <dd><input class="inputbox autowidth" type="text" name="location" id="location" size="20" /></dd>
+          </dl>
+
+          <dl>
+            <dt>
+              <label for="steam_community_link">{L_STEAM_COMMUNITY_LINK}{L_COLON}</label>
+              <br /><span>{L_STEAM_COMMUNITY_LINK_HELP_TEXT}</span>
+            </dt>
+            <dd><input class="inputbox autowidth" type="text" name="steam_community_link" id="steam_community_link" size="40" /></dd>
+          </dl>
+
+          <dl>
+            <dt><label>{L_FAVORITE_FISH_SERVERS}</label></dt>
+            <dd>
+              <label for="csgo"><input type="checkbox" name="favorite_fish_servers[]" id="csgo" value="{L_CSGO}" /> {L_CSGO}</label><br />
+              <label for="lol"><input type="checkbox" name="favorite_fish_servers[]" id="lol" value="{L_LOL}" /> {L_LOL}</label><br />
+              <label for="mc"><input type="checkbox" name="favorite_fish_servers[]" id="mc" value="{L_MC}" /> {L_MC}</label><br />
+              <label for="tf2"><input type="checkbox" name="favorite_fish_servers[]" id="tf2" value="{L_TF2}" /> {L_TF2}</label>
+            </dd>
+          </dl>
+
+          <dl>
+            <dt>
+              <label for="other_games">{L_OTHER_GAMES}</label>
+            </dt>
+            <dd><textarea name="other_games" id="other_games" rows="5" /></textarea></dd>
+          </dl>
+
+          <dl>
+            <dt><label for="fm_yes">{L_FORMER_MEMBER}</label></dt>
+            <dd>
+              <label for="fm_yes"><input type="radio" name="former_member" id="fm_yes" value="{L_YES}" /> {L_YES}</label>
+              <label for="fm_no"><input type="radio" name="former_member" id="fm_no" value="{L_NO}" /> {L_NO}</label>
+            </dd>
+          </dl>
+
+          <dl>
+            <dt><label for="moac_yes">{L_MEMBER_OF_ANOTHER_CLAN}</label></dt>
+            <dd>
+              <label for="moac_yes"><input type="radio" name="member_of_another_clan" id="moac_yes" value="{L_YES}" /> {L_YES}</label>
+              <label for="moac_no"><input type="radio" name="member_of_another_clan" id="moac_no" value="{L_NO}" /> {L_NO}</label>
+            </dd>
+          </dl>
+
+          <dl>
+            <dt>
+              <label for="clan_info">{L_CLAN_INFO}{L_COLON}</label>
+            </dt>
+            <dd><textarea name="clan_info" id="clan_info" rows="5" /></textarea></dd>
+          </dl>
+
+        </fieldset>
+
+        <fieldset>
+
+          <h4>{L_YOUR_FAITH}</h4>
+
+          <dl class="cc">
+            <dt><label for="born_again_yes">{L_BORN_AGAIN}</label></dt>
+            <dd>
+              <label for="born_again_yes"><input type="radio" name="born_again" id="born_again_yes" value="{L_YES}" /> {L_YES}</label>
+              <label for="born_again_no"><input type="radio" name="born_again" id="born_again_no" value="{L_NO}" /> {L_NO}</label>
+              <label for="born_again_not_sure"><input type="radio" name="born_again" id="born_again_not_sure" value="{L_NOT_SURE}" /> {L_NOT_SURE}</label>
+            </dd>
+          </dl>
+
+          <dl class="cc">
+            <dt>
+              <label for="testimony">{L_TESTIMONY}{L_COLON}</label>
+            </dt>
+            <dd><textarea name="testimony" id="testimony" rows="5" /></textarea></dd>
+          </dl>
+
+          <dl class="cc">
+            <dt>
+              <label for="ministry_involvement">{L_MINISTRY_INVOLVEMENT}</label>
+            </dt>
+            <dd><textarea name="ministry_involvement" id="ministry_involvement" rows="5" /></textarea></dd>
+          </dl>
+
+          <dl class="cc">
+            <dt>
+              <label for="denomination">{L_DENOMINATION}</label>
+            </dt>
+            <dd><input type="text" name="denomination" id="denomination" size="20" /></dd>
+          </dl>
+
+          <dl class="acc" style="display:none;">
+            <dt>
+              <label for="other_religion">{L_OTHER_RELIGION}</label>
+            </dt>
+            <dd><textarea name="other_religion" id="other_religion" rows="5" /></textarea></dd>
+          </dl>
+
+        </fieldset>
+
+        <fieldset>
+
+          <h4>{L_ABOUT_YOU}</h4>
+
+          <dl>
+            <dt>
+              <label for="why_join">{L_WHY_JOIN}</label>
+            </dt>
+            <dd><textarea name="why_join" id="why_join" rows="5" /></textarea></dd>
+          </dl>
+
+          <dl>
+            <dt>
+              <label for="contribute">{L_CONTRIBUTE}</label><br />
+              <span>{L_CONTRIBUTE_HELP_TEXT}</span>
+            </dt>
+            <dd><textarea name="contribute" id="contribute" rows="5" /></textarea></dd>
+          </dl>
+
+          <dl>
+            <dt>
+              <label for="know_any_members">{L_KNOW_ANY_MEMBERS}{L_COLON}</label>
+            </dt>
+            <dd><textarea name="know_any_members" id="know_any_members" rows="5" /></textarea></dd>
+          </dl>
+
+          <dl>
+            <dt><label for="agree_yes">{L_AGREE}</label></dt>
+            <dd>
+              <label for="agree_yes"><input type="radio" name="agree" id="agree_yes" value="{L_YES}" /> {L_YES}</label>
+              <label for="agree_no"><input type="radio" name="agree" id="agree_no" value="{L_NO}" /> {L_NO}</label>
+            </dd>
           </dl>
 
         </fieldset>
@@ -33,5 +190,20 @@
   </div>
 
 </div>
+
+<script>
+  $(function() {
+    $("input[name=app_type]").change(function() {
+      var app_type = $(this).val();
+      if (app_type == "ACC") {
+        $('.cc').hide();
+        $('.acc').show();
+      } else {
+        $('.cc').show();
+        $('.acc').hide();
+      }
+    });
+  });
+</script>
 
 <!-- INCLUDE overall_footer.html -->
