@@ -6,6 +6,7 @@ class join implements apps_interface {
 
   var $app;
   var $request;
+  var $user;
 
   /**
    * Sets the name of the application being requested
@@ -24,6 +25,15 @@ class join implements apps_interface {
    */
   public function setRequest(\phpbb\request\request $request) {
     $this->request = $request;
+  }
+
+  /**
+   * Sets the user class
+   *
+   * @param \phpbb\user $user phpBB's user class
+   */
+  public function setUser(\phpbb\user $user) {
+    $this->user = $user;
   }
 
   /**
@@ -46,7 +56,7 @@ class join implements apps_interface {
    */
   public function getTopicTitle() {
 
-    $title = 'Test';
+    $title = 'New application submitted by '. $this->user->data['username'];
 
     return $title;
 

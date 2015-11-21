@@ -97,6 +97,7 @@ class main_controller {
     $app_obj = new $app_class;
     $app_obj->setApp($app);
     $app_obj->setRequest($this->request);
+    $app_obj->setUser($this->user);
 
     // Get app data
     $forum_id = $app_obj->getForumID();

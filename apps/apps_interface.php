@@ -20,6 +20,13 @@ interface apps_interface {
   public function setRequest(\phpbb\request\request $request);
 
   /**
+   * Sets the user class
+   *
+   * @param \phpbb\user $user phpBB's user class
+   */
+  public function setUser(\phpbb\user $user);
+
+  /**
    * The Forum ID where the application will get posted to
    *
    * @return int ID of the forum we'll submit the app to
