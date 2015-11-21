@@ -139,7 +139,17 @@ class main_controller {
     $body = preg_replace($match, $replace, trim($body));
 
     // variables to hold the parameters for submit_post
-    $poll = $uid = $bitfield = $options = '';
+    $uid = $bitfield = $options = '';
+
+    // Setup application acceptance poll
+    $poll = array(
+			'poll_title' => 'Application Approval',
+			'poll_start' => '0',
+			'poll_max_options' => '1',
+			'poll_length' => '0',
+			'poll_vote_change' => 1,
+			'poll_options' => array(0 => 'Approve', 1 => 'Deny', 2 => 'Wait'),
+		);
 
     generate_text_for_storage($title, $uid, $bitfield, $options, false, false, false);
     generate_text_for_storage($body, $uid, $bitfield, $options, true, true, true);
