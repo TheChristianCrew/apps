@@ -17,5 +17,6 @@ if (empty($lang) || !is_array($lang))
 }
 
 $lang = array_merge($lang, array(
-  'PAGE_TITLE' => 'Applications'
+  'PAGE_TITLE' => 'Application Not Found',
+  'ERROR_TEXT' => 'Either you didn\'t request an application or the requested application doesn\'t exist. Please try again.'
 ));

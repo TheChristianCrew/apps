@@ -55,13 +55,18 @@ class main_controller {
 
     global $phpbb_root_path;
 
+    $apps = array(
+      'join',
+      'adminrequest'
+    );
+
     $language_file = 'default_lang';
     $template = 'default.html';
 
     /**
      * Check if an application has been requested
      */
-    if (!empty($app)) {
+    if (!empty($app) && in_array($app, $apps)) {
 
       // Assign template vars
       $this->template->assign_vars(array(
