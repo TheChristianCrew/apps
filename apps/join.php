@@ -56,7 +56,7 @@ class join implements apps_interface {
    */
   public function getTopicTitle() {
 
-    $title = 'New application submitted by '. $this->user->data['username'];
+    $title = 'Membership application submitted by '. $this->user->data['username'];
 
     return $title;
 
