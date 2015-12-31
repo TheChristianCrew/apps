@@ -20,9 +20,11 @@ $lang = array_merge($lang, array(
 
   'PAGE_TITLE'                     => 'Application to Join Christian Crew Gaming',
 
-  'APP_TYPE'                       => 'Select if you are joining CC or ACC',
+  'APP_TYPE'                       => 'Select if you wish to join CC or ACC',
   'APP_TYPE_CC'                    => 'CC',
   'APP_TYPE_ACC'                   => 'ACC',
+  'CC_DESCRIPTION'                 => 'Christian Crew Gaming\'s (&#8224;&lt;CC&gt;&lt;) membership is designated for those who claim to be Born Again believers in Christ. If you have accepted Christ into your life and claim to be a Born Again believer, you may apply for CC.',
+  'ACC_DESCRIPTION'                => 'Allies of the Christian Crew (&lt;ACC&gt;) is designated for those who do not claim to be Born Again believers in Christ. Members of ACC are expected to fully adhere to Christian Crew Gaming\'s rules at all times, to respect what Christian Crew Gaming stands for, and be willing to listen about what Word of God is what it means to have a relationship with Christ. If you do not know Christ but are willing to join our community under these terms, you may apply for ACC.',
 
   'PERSONAL_INFORMATION'           => 'Personal Information',
   'INGAME_NAME'                    => 'In-Game Name',
