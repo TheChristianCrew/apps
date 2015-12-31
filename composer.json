@@ -1,5 +1,5 @@
 {
-  "name": "thechristiancrew/apps",
+  "name": "thechristiancrew/phpbb_ext_apps",
   "type": "phpbb-extension",
   "description": "The Christain Crew's application system",
   "homepage": "https://github.com/TheChristianCrew/phpbb_ext_apps",
