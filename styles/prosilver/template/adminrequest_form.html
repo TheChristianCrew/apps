@@ -1,0 +1,247 @@
+<!-- INCLUDE overall_header.html -->
+
+<div id="page-body">
+
+  <h2>{PAGE_TITLE}</h2>
+
+  <div class="panel bg1">
+    <div class="inner">
+
+      <form method="post" action="{L_FORM_ACTION}" id="app">
+
+        <fieldset>
+
+          <h2>{L_PERSONAL_INFORMATION}</h2>
+
+          <dl>
+            <dt><label for="ingame_name">{L_INGAME_NAME}{L_COLON}</label></dt>
+            <dd><input class="inputbox autowidth" type="text" name="ingame_name" id="ingame_name" size="20" required /></dd>
+          </dl>
+
+          <dl>
+            <dt>
+              <label for="real_name">{L_REAL_NAME}{L_COLON}</label><br />
+              <span>{L_REAL_NAME_HELP_TEXT}</span>
+            </dt>
+            <dd><input class="inputbox autowidth" type="text" name="real_name" id="real_name" size="20" /></dd>
+          </dl>
+
+          <dl>
+            <dt><label for="age">{L_AGE}{L_COLON}</label></dt>
+            <dd><input class="inputbox autowidth" type="text" name="age" id="age" size="3" /></dd>
+          </dl>
+
+          <dl>
+            <dt>
+              <label for="location">{L_LOCATION}{L_COLON}</label><br />
+              <span>{L_LOCATION_HELP_TEXT}</span>
+            </dt>
+            <dd><input class="inputbox autowidth" type="text" name="location" id="location" size="20" /></dd>
+          </dl>
+
+          <dl>
+            <dt>
+              <label for="steam_id">{L_STEAM_ID}{L_COLON}</label>
+              <br /><span>{L_STEAM_ID_HELP_TEXT}</span>
+            </dt>
+            <dd><input class="inputbox autowidth" type="text" name="steam_id" id="steam_id" size="40" /></dd>
+          </dl>
+
+          <dl>
+            <dt>
+              <label for="steam_community_link">{L_STEAM_COMMUNITY_LINK}{L_COLON}</label>
+              <br /><span>{L_STEAM_COMMUNITY_LINK_HELP_TEXT}</span>
+            </dt>
+            <dd><input class="inputbox autowidth" type="text" name="steam_community_link" id="steam_community_link" size="40" /></dd>
+          </dl>
+
+          <dl>
+            <dt><label>{L_WHAT_DAYS}</label></dt>
+            <dd>
+              <label for="monday"><input type="checkbox" name="what_days[]" id="monday" value="{L_MONDAY}" /> {L_MONDAY}</label><br />
+              <label for="tuesday"><input type="checkbox" name="what_days[]" id="tuesday" value="{L_TUESDAY}" /> {L_TUESDAY}</label><br />
+              <label for="wednesday"><input type="checkbox" name="what_days[]" id="wednesday" value="{L_WEDNESDAY}" /> {L_WEDNESDAY}</label><br />
+              <label for="thursday"><input type="checkbox" name="what_days[]" id="thursday" value="{L_THURSDAY}" /> {L_THURSDAY}</label><br />
+              <label for="friday"><input type="checkbox" name="what_days[]" id="friday" value="{L_FRIDAY}" /> {L_FRIDAY}</label><br />
+              <label for="saturday"><input type="checkbox" name="what_days[]" id="saturday" value="{L_SATURDAY}" /> {L_SATURDAY}</label><br />
+              <label for="sunday"><input type="checkbox" name="what_days[]" id="sunday" value="{L_SUNDAY}" /> {L_SUNDAY}</label><br />
+            </dd>
+          </dl>
+
+          <dl>
+            <dt><label>{L_WHAT_TIME}</label></dt>
+            <dd>
+              <select name="what_time">
+                <option>-</option>
+                <option value="12am">12:00am</option>
+                <option value="1am">1:00am</option>
+                <option value="2am">2:00am</option>
+                <option value="3am">3:00am</option>
+                <option value="4am">4:00am</option>
+                <option value="5am">5:00am</option>
+                <option value="6am">6:00am</option>
+                <option value="7am">7:00am</option>
+                <option value="8am">8:00am</option>
+                <option value="9am">9:00am</option>
+                <option value="10am">10:00am</option>
+                <option value="11am">11:00am</option>
+                <option value="12pm">12:00pm</option>
+                <option value="1pm">1:00pm</option>
+                <option value="2pm">2:00pm</option>
+                <option value="3pm">3:00pm</option>
+                <option value="4pm">4:00pm</option>
+                <option value="5pm">5:00pm</option>
+                <option value="6pm">6:00pm</option>
+                <option value="7pm">7:00pm</option>
+                <option value="8pm">8:00pm</option>
+                <option value="9pm">9:00pm</option>
+                <option value="10pm">10:00pm</option>
+                <option value="11pm">11:00pm</option>
+              </select>
+            </dd>
+          </dl>
+
+        </fieldset>
+
+        <fieldset>
+
+          <h2>{L_MEMBERSHIP_INFORMATION}</h2>
+
+          <dl>
+            <dt><label for="member_yes">{L_ARE_YOU_A_MEMBER}</label></dt>
+            <dd>
+              <label for="member_yes"><input type="radio" name="are_you_a_member" id="member_yes" value="{L_YES}" /> {L_YES}</label>
+              <label for="member_no"><input type="radio" name="are_you_a_member" id="member_no" value="{L_NO}" /> {L_NO}</label>
+            </dd>
+          </dl>
+
+          <dl>
+            <dt>
+              <label for="how_long">{L_HOW_LONG}{L_COLON}</label>
+            </dt>
+            <dd><input class="inputbox autowidth" type="text" name="how_long" id="how_long" size="20" /></dd>
+          </dl>
+
+        </fieldset>
+
+        <fieldset>
+
+          <h2>{L_ADMIN_PHILOSOPHY}</h2>
+
+          <dl>
+            <dt>
+              <label for="why_grant_powers">{L_WHY_GRANT_POWERS}</label>
+            </dt>
+            <dd><textarea name="why_grant_powers" id="why_grant_powers" rows="5"></textarea></dd>
+          </dl>
+
+          <dl>
+            <dt>
+              <label for="improve_admin_team">{L_IMPROVE_ADMIN_TEAM}</label>
+            </dt>
+            <dd><textarea name="improve_admin_team" id="improve_admin_team" rows="5"></textarea></dd>
+          </dl>
+
+          <dl>
+            <dt>
+              <label for="whats_important">{L_WHATS_IMPORTANT}</label>
+            </dt>
+            <dd><textarea name="whats_important" id="whats_important" rows="5"></textarea></dd>
+          </dl>
+
+        </fieldset>
+
+        <fieldset>
+
+          <h2>{L_ADMIN_DISAGREEMENTS}</h2>
+
+          <dl>
+            <dt>
+              <label for="resolve_disagreement">{L_RESOLVE_DISAGREEMENT}</label>
+            </dt>
+            <dd><textarea name="resolve_disagreement" id="resolve_disagreement" rows="5"></textarea></dd>
+          </dl>
+
+          <dl>
+            <dt>
+              <label for="how_to_continue">{L_HOW_TO_CONTINUE}</label>
+            </dt>
+            <dd><textarea name="how_to_continue" id="how_to_continue" rows="5"></textarea></dd>
+          </dl>
+
+        </fieldset>
+
+        <fieldset>
+
+          <h2>{L_DEALING_WITH_PLAYERS}</h2>
+
+          <dl>
+            <dt>
+              <label for="scenerio_1">{L_SCENERIO_1}</label>
+            </dt>
+            <dd><textarea name="scenerio_1" id="scenerio_1" rows="5"></textarea></dd>
+          </dl>
+
+          <dl>
+            <dt>
+              <label for="scenerio_2">{L_SCENERIO_2}</label>
+            </dt>
+            <dd><textarea name="scenerio_2" id="scenerio_2" rows="5"></textarea></dd>
+          </dl>
+
+          <dl>
+            <dt>
+              <label for="scenerio_3">{L_SCENERIO_3}</label>
+            </dt>
+            <dd><textarea name="scenerio_3" id="scenerio_3" rows="5"></textarea></dd>
+          </dl>
+
+          <dl>
+            <dt>
+              <label for="scenerio_4">{L_SCENERIO_4}</label>
+            </dt>
+            <dd><textarea name="scenerio_4" id="scenerio_4" rows="5"></textarea></dd>
+          </dl>
+
+        </fieldset>
+
+        <fieldset>
+
+          <h2>{L_ADMIN_CODE_OF_CONDUCT}</h2>
+
+          <div class="content">
+            <p>{L_IF_I_AM_ACCEPTED}{L_COLON}</p>
+            <ul>
+              <li>{L_CODE_1}</li>
+              <li>{L_CODE_2}</li>
+              <li>{L_CODE_3}</li>
+              <li>{L_CODE_4}</li>
+              <li>{L_CODE_5}</li>
+              <li>{L_CODE_6}</li>
+              <li>{L_CODE_7}</li>
+              <li>{L_CODE_8}</li>
+            </ul>
+          </div>
+
+          <dl>
+            <dt><label for="agree_yes">{L_AGREE}</label></dt>
+            <dd>
+              <label for="agree_yes"><input type="radio" name="agree" id="agree_yes" value="{L_YES}" /> {L_YES}</label>
+              <label for="agree_no"><input type="radio" name="agree" id="agree_no" value="{L_NO}" /> {L_NO}</label>
+            </dd>
+          </dl>
+
+        </fieldset>
+
+        <fieldset class="submit-buttons">
+          <input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />
+        </fieldset>
+
+      </form>
+
+		</div>
+	</div>
+
+</div>
+
+<!-- INCLUDE overall_footer.html -->
