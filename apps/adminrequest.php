@@ -43,7 +43,7 @@ class adminrequest implements apps_interface {
    */
   public function getForumID() {
 
-    $forum_id = 4;
+    $forum_id = 31;
 
     return $forum_id;
 

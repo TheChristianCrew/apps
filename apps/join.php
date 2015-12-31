@@ -43,7 +43,7 @@ class join implements apps_interface {
    */
   public function getForumID() {
 
-    $forum_id = 4;
+    $forum_id = 39;
 
     return $forum_id;
 
