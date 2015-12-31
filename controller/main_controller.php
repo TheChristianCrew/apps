@@ -117,9 +117,6 @@ class main_controller {
       $template = 'app_submitted_failed.html';
     }
 
-    // Load language file
-    $this->user->add_lang_ext('thechristiancrew/apps', $app .'_submitted_lang');
-
     // Render template
     return $this->helper->render($template, $this->user->lang('PAGE_TITLE'));
 
