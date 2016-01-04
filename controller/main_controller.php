@@ -55,6 +55,13 @@ class main_controller {
 
     global $phpbb_root_path;
 
+    /**
+     * Check if the user is logged in
+     */
+    if ($this->user->data['is_bot'] || !$this->user->data['is_registered']) {
+      login_box('', 'You must be registered and logged in to submit applications', '', false, true);
+    }
+
     $apps = array(
       'join',
       'adminrequest'
