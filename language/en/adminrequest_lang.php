@@ -1,6 +1,6 @@
 <?php
 /**
- * Join application language file
+ * Admin request application language file
  */
 
 /**

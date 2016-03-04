@@ -1,7 +1,7 @@
 <?php
 /**
-* Apps default lanuage file
-*/
+ * Default application submitted language file
+ */
 
 /**
 * DO NOT CHANGE
