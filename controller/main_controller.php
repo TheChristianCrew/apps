@@ -64,7 +64,8 @@ class main_controller {
 
     $apps = array(
       'join',
-      'adminrequest'
+      'adminrequest',
+      'twitch'
     );
 
     $language_file = 'default_lang';
