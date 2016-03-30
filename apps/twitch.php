@@ -83,7 +83,7 @@ class twitch implements apps_interface {
     [b][i]'. $lang['TIMEZONE'] .':[/i][/b] '. $this->request->variable('timezone', '') .'
     [b][i]'. $lang['STEAM_COMMUNITY_LINK'] .':[/i][/b] '. $this->request->variable('steam_community_link', '') .'
     [b][i]'. $lang['YOUTUBE_PROFILE_LINK'] .':[/i][/b] '. $this->request->variable('youtube_profile_link', '') .'
-    [b][i]'. $lang['TWITCH_PROFILE_LINK'] .':[/i][/b] '. $this->request->variable('twitch_profile_link', '') .'
+    [b][i]'. $lang['TWITCH_PROFILE_LINK'] .':[/i][/b] [url]'. $this->request->variable('twitch_profile_link', '') .'[/url]
 
     [size=120][u][b]'. $lang['STREAMING_INFORMATION'] .'[/b][/u][/size]
     [b][i]'. $lang['TOP_3_GAMES'] .'[/i][/b]
