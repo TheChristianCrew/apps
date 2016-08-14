@@ -80,7 +80,7 @@ class adminrequest implements apps_interface {
     [b][i]'. $lang['LOCATION'] .':[/i][/b] '. $this->request->variable('location', '') .'
     [b][i]'. $lang['STEAM_ID'] .':[/i][/b] '. $this->request->variable('steam_id', '') .'
     [b][i]'. $lang['STEAM_COMMUNITY_LINK'] .':[/i][/b] '. $this->request->variable('steam_community_link', '') .'
-
+    [b][i]'. $lang['SERVER_FOR'] .':[/i][/b] '. $this->request->variable('server_for', '') .'
     [b][i]'. $lang['WHAT_DAYS'] .'[/i][/b]
     '. implode(', ', $this->request->variable('what_days', array('1'=>''))) .'
 
