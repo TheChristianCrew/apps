@@ -29,6 +29,7 @@ $lang = array_merge($lang, array(
   'PERSONAL_INFORMATION'           => 'Personal Information',
   'INGAME_NAME'                    => 'In-Game Name',
   'REAL_NAME'                      => 'Real Name',
+  'EMAIL_ADDRESS'                  => 'Email Address',
   'REAL_NAME_HELP_TEXT'            => 'First &amp; last',
   'AGE'                            => 'Age',
   'LOCATION'                       => 'Location',

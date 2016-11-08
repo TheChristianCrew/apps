@@ -79,6 +79,7 @@ class join implements apps_interface {
     [size=120][u][b]'. $lang['PERSONAL_INFORMATION'] .'[/b][/u][/size]
     [b][i]'. $lang['INGAME_NAME'] .':[/i][/b] '. $this->request->variable('ingame_name', '') .'
     [b][i]'. $lang['REAL_NAME'] .':[/i][/b] '. $this->request->variable('real_name', '') .'
+    [b][i]'. $lang['EMAIL_ADDRESS'] .':[/i][/b] '. $this->request->variable('email_address', '') .'
     [b][i]'. $lang['AGE'] .':[/i][/b] '. $this->request->variable('age', '') .'
     [b][i]'. $lang['LOCATION'] .':[/i][/b] '. $this->request->variable('location', '') .'
     [b][i]'. $lang['STEAM_COMMUNITY_LINK'] .':[/i][/b] '. $this->request->variable('steam_community_link', '') .'
